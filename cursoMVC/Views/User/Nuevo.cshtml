@@ -1,0 +1,21 @@
+﻿@model cursoMVC.Models.UserViewModels
+
+
+@{
+    ViewBag.Title = "Nuevo";
+}
+
+<h2>Nuevo</h2>
+
+<div class="container">
+    <div class="col-md-12">
+        @using (Html.BeginForm("InsertUser","User", FormMethod.Post, new {role = "form", @class = "" }))
+            {
+                @Html.LabelFor(x => x.Email)
+                @Html.TextBoxFor(x => x.Email, new {@class ="form-control"})
+                @Html.ValidationMessage("Email", new {@class = "Text-danger"})
+
+            <input type="submit" class="btn btn-success" value="Guardar Usuario">
+            }
+    </div>
+</div>
